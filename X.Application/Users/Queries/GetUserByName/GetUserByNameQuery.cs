@@ -1,5 +1,6 @@
-﻿namespace X.Application.Users.Queries.GetUserByName;
+﻿using X.Application.Core.Masseges;
+using X.Domain.Users;
 
-public sealed class GetUserByNameQuery
-{
-}
+namespace X.Application.Users.Queries.GetUserByName;
+
+public sealed record GetUserByNameQuery(string Name) : IQuery<User>;

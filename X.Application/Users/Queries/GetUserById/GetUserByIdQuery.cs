@@ -1,5 +1,6 @@
-﻿namespace X.Application.Users.Queries.GetUserById;
+﻿using X.Application.Core.Masseges;
+using X.Domain.Users;
 
-internal class GetUserByIdQuery
-{
-}
+namespace X.Application.Users.Queries.GetUserById;
+
+public sealed record GetUserByIdQuery(Guid UserId) : IQuery<User>;

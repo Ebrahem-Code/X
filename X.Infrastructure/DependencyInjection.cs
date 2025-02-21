@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using X.Application.Core.Data;
+using X.Domain.Products;
 using X.Domain.Users;
 using X.Infrastructure.Database;
 using X.Infrastructure.Repositories;
@@ -24,6 +25,7 @@ public static class DependencyInjection
 
         // Register Services.
         services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IProductRepository, ProductRepository>();
 
 
         return services;

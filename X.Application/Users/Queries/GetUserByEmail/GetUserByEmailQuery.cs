@@ -1,5 +1,6 @@
-﻿namespace X.Application.Users.Queries.GetUserByEmail;
+﻿using X.Application.Core.Masseges;
+using X.Domain.Users;
 
-public sealed class GetUserByEmailQuery
-{
-}
+namespace X.Application.Users.Queries.GetUserByEmail;
+
+public sealed record GetUserByEmailQuery(string Email) : IQuery<User>;

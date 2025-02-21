@@ -1,5 +1,5 @@
-﻿namespace X.Application.Users.Commands.DeleteUser;
+﻿using X.Application.Core.Masseges;
 
-internal class DeleteUserCommand
-{
-}
+namespace X.Application.Users.Commands.DeleteUser;
+
+public sealed record DeleteUserCommand(Guid UserId) : ICommand;

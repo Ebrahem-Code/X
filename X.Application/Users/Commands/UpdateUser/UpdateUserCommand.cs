@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using X.Application.Core.Masseges;
 
-namespace X.Application.Users.Commands.UpdateUser
-{
-    internal class UpdateUserCommand
-    {
-    }
-}
+namespace X.Application.Users.Commands.UpdateUser;
+
+public sealed record UpdateUserCommand(
+    string firstName, 
+    string lastName): ICommand;

@@ -1,5 +1,6 @@
-﻿namespace X.Application.Users.Queries.GetAllUsers;
+﻿using X.Application.Core.Masseges;
+using X.Domain.Users;
 
-internal class GetAllUsersQuery
-{
-}
+namespace X.Application.Users.Queries.GetAllUsers;
+
+public sealed record GetAllUsersQuery() : IQuery<List<User>>;

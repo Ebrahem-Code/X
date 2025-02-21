@@ -11,12 +11,12 @@ internal sealed class UserRepository(IDbContext dbContext) : IUserRepository
         await dbContext.Set<User>().AddAsync(user, cancellationToken);
     }
 
-    public void UpdateAsync(User user)
+    public void Update(User user)
     {
         dbContext.Set<User>().Update(user);
     }
 
-    public void DeleteAsync(User user)
+    public void Delete(User user)
     {
         dbContext.Set<User>().Remove(user);
     }
