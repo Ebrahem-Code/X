@@ -5,6 +5,8 @@ using X.Application.Users.Commands.CreateUser;
 
 namespace X.API.Controllers;
 
+[Route("api/[Controller]")]
+[ApiController]
 public sealed class UsersController(ISender sender) : ControllerBase
 {
     [HttpPost]

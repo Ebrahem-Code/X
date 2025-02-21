@@ -1,4 +1,5 @@
 namespace X.API;
+
 using X.Infrastructure;
 using X.Application;
 
@@ -8,28 +9,27 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
-
+        // Add services to the container
         builder.Services.AddControllers();
-        
-        builder.Services.AddOpenApi();
-
         builder.Services.AddInfrastructure(builder.Configuration);
         builder.Services.AddApplication();
 
+        // Register the Swagger generator
+        builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddSwaggerGen();
+
         var app = builder.Build();
 
-        // Configure the HTTP request pipeline.
-        if (app.Environment.IsDevelopment())
+        // Enable Swagger for all environments
+        app.UseSwagger();
+        app.UseSwaggerUI(c =>
         {
-            app.MapOpenApi();
-        }
+            c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            c.RoutePrefix = string.Empty; // Loads Swagger at the root URL
+        });
 
         app.UseHttpsRedirection();
-
         app.UseAuthorization();
-
-
         app.MapControllers();
 
         app.Run();
