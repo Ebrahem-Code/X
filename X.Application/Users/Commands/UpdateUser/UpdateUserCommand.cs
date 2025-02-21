@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace X.Application.Users
+namespace X.Application.Users.Commands.UpdateUser
 {
-    internal class User
+    internal class UpdateUserCommand
     {
     }
 }

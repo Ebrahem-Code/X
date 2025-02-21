@@ -1,8 +1,11 @@
-﻿namespace X.Domain.Users;
+﻿using X.Domain.Core.BaseEntity;
 
-public sealed class User 
+namespace X.Domain.Users;
+
+public sealed class User : AggregateRoot
 {
     private User(string firstName, string lastName, string email, string password)
+        : base(Guid.NewGuid())
     {
         FirstName = firstName;
         LastName = lastName;
@@ -12,7 +15,6 @@ public sealed class User
 
     private User() { }
 
-    public Guid Id { get; private set; } = default!;    
     public string FirstName { get; private set; } = default!;
     public string LastName { get; private set; } = default!;
     public string Email { get; private set; } = default!;

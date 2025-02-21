@@ -7,11 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\X.Domain\X.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Products\" />
+    <Folder Include="Users\Events\UserDeletedEvent\" />
+    <Folder Include="Users\Events\UserUpdatedEvent\" />
+    <Folder Include="Users\Events\UserCreatedEvent\" />
   </ItemGroup>
 
 </Project>
