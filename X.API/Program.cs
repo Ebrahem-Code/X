@@ -2,6 +2,7 @@ namespace X.API;
 
 using X.Infrastructure;
 using X.Application;
+using Serilog;
 
 public class Program
 {
@@ -18,6 +19,10 @@ public class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
+
+        builder.Host.UseSerilog((context, configuration) 
+            => configuration.ReadFrom.Configuration(context.Configuration));
+
         var app = builder.Build();
 
         // Enable Swagger for all environments
@@ -28,6 +33,7 @@ public class Program
             c.RoutePrefix = string.Empty; // Loads Swagger at the root URL
         });
 
+        app.UseSerilogRequestLogging();
         app.UseHttpsRedirection();
         app.UseAuthorization();
         app.MapControllers();
