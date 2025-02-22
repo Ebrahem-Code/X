@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <Folder Include="Contracts\Products\" />
+    <Folder Include="Endpoints\" />
   </ItemGroup>
 
 </Project>

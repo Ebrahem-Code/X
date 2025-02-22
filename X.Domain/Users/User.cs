@@ -25,19 +25,9 @@ public sealed class User : AggregateRoot
         return new User(firstName, lastName, email, password);
     }
 
-    public void UpdateName(string firstName, string lastName, string email, string password)
+    public void Update(string firstName, string lastName)
     {
         FirstName = firstName;
         LastName = lastName;
-    }
-
-    public void UpdateEmail(string email)
-    {
-        Email = email;
-    }
-
-    public void UpdatePassword(string password)
-    {
-        Password = password;
     }
 }

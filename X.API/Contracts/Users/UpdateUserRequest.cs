@@ -1,7 +1,6 @@
 ﻿namespace X.API.Contracts.Users;
 
 public sealed record UpdateUserRequest(
+    Guid UserId,
     string FirstName,
-    string LastName, 
-    string Email, 
-    string Password);
+    string LastName);

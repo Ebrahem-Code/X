@@ -3,5 +3,6 @@
 namespace X.Application.Users.Commands.UpdateUser;
 
 public sealed record UpdateUserCommand(
-    string firstName, 
-    string lastName): ICommand;
+    Guid UserId,
+    string FirstName, 
+    string LastName): ICommand<Guid>;

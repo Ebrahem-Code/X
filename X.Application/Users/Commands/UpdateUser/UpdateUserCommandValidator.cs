@@ -6,7 +6,7 @@ internal sealed class UpdateUserCommandValidator : AbstractValidator<UpdateUserC
 {
     public UpdateUserCommandValidator()
     {
-        RuleFor(x => x.firstName).NotNull().NotEmpty();
-        RuleFor(x => x.lastName).NotNull().NotEmpty();
+        RuleFor(x => x.FirstName).NotNull().NotEmpty();
+        RuleFor(x => x.LastName).NotNull().NotEmpty();
     }
 }

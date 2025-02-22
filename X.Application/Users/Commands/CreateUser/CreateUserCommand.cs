@@ -1,6 +1,4 @@
-﻿using X.Application.Core.Data;
-using X.Application.Core.Masseges;
-using X.Domain.Users;
+﻿using X.Application.Core.Masseges;
 
 namespace X.Application.Users.Commands.CreateUser;
 
@@ -8,4 +6,4 @@ public sealed record CreateUserCommand(
     string FirstName,
     string LastName,
     string Email,
-    string Password) : ICommand;
+    string Password) : ICommand<Guid>;

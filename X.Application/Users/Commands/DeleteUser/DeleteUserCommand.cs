@@ -2,4 +2,4 @@
 
 namespace X.Application.Users.Commands.DeleteUser;
 
-public sealed record DeleteUserCommand(Guid UserId) : ICommand;
+public sealed record DeleteUserCommand(Guid UserId) : ICommand<Guid>;
