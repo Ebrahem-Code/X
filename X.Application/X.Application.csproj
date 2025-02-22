@@ -22,9 +22,8 @@
     <Folder Include="Orders\Commands\" />
     <Folder Include="Orders\Events\" />
     <Folder Include="Orders\Queries\" />
-    <Folder Include="Products\Commands\" />
     <Folder Include="Products\Events\" />
-    <Folder Include="Products\Queries\" />
+    <Folder Include="Products\Queries\GetProductById\" />
     <Folder Include="Users\Events\UserDeletedEvent\" />
     <Folder Include="Users\Events\UserUpdatedEvent\" />
     <Folder Include="Users\Events\UserCreatedEvent\" />

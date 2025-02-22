@@ -25,15 +25,11 @@ public sealed class Product : AggregateRoot
         return new Product(name, description, price, stock);
     }
 
-    public void UpdateProduct(string name, string description, decimal price)
+    public void Update(string name, string description, decimal price, int stock)
     {
         Name = name;
         Description = description;
         Price = price;
-    }
-
-    public void UpdateStock(int stock)
-    {
         Stock = stock;
     }
 }
