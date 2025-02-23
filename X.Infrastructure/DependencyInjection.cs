@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using X.Application.Core.Data;
 using X.Application.Core.Emails;
 using X.Application.Core.JWT;
+using X.Application.Core.Storage;
 using X.Domain.Notifications;
 using X.Domain.Orders;
 using X.Domain.Products;
@@ -15,6 +16,7 @@ using X.Infrastructure.JWT.Settings;
 using X.Infrastructure.Repositories;
 using X.Infrastructure.Sms;
 using X.Infrastructure.Sms.Settings;
+using X.Infrastructure.Storage;
 
 namespace X.Infrastructure;
 
@@ -39,12 +41,15 @@ public static class DependencyInjection
         services.AddScoped<INotificationRepository, NotificationRepository>();
 
 
+        // Register FileStorageService
+        services.AddScoped<IFileStorageService, FileStorageService>();
+
 
         // Register Services.
         services.AddScoped<IJwtService, JwtService>();
         services.AddScoped<IEmailService, EmailService>();
         services.AddScoped<ISmsService, TwilioSmsService>();
-
+        //services.AddScoped<IPaymentService, PaymentService>();
 
         // Register Configuration.
         services.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));

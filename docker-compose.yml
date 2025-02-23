@@ -1,0 +1,17 @@
+services:
+  x.api-gateway:
+    image: x.apigateway
+    build:
+      context: .
+      dockerfile: X.ApiGateway/Dockerfile
+    ports:
+      - "5000:80"
+    depends_on:
+      - orders-api
+      - payments-api
+      - notifications-api
+  x.api:
+    image: ${DOCKER_REGISTRY-}xapi
+    build:
+      context: .
+      dockerfile: X.API/Dockerfile

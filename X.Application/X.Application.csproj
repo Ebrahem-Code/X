@@ -7,6 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Notifications\**" />
+    <Compile Remove="Orders\**" />
+    <EmbeddedResource Remove="Notifications\**" />
+    <EmbeddedResource Remove="Orders\**" />
+    <None Remove="Notifications\**" />
+    <None Remove="Orders\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.11.0" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
     <PackageReference Include="MediatR" Version="12.4.1" />
@@ -18,10 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Notifications\" />
-    <Folder Include="Orders\Commands\" />
-    <Folder Include="Orders\Events\" />
-    <Folder Include="Orders\Queries\" />
     <Folder Include="Products\Events\" />
     <Folder Include="Products\Queries\GetProductById\" />
     <Folder Include="Users\Events\UserDeletedEvent\" />
