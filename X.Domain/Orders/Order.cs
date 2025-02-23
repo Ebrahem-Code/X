@@ -13,7 +13,7 @@ public sealed class Order : AggregateRoot
     }
     private Order() { }
 
-    public Guid UserId { get; private set; }
+    public Guid UserId { get; private set; } 
     public string Description { get; private set; } = default!;
     public decimal Price { get; private set; }
 
