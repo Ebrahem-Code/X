@@ -1,4 +1,4 @@
-﻿namespace X.Infrastructure.Emails.Settings;
+﻿namespace X.Infrastructure.ExternalServices.Emails.Settings;
 
 public class SmtpSettings
 {

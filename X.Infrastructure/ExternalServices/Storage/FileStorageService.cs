@@ -12,7 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using X.Application.Core.Storage;
 
-namespace X.Infrastructure.Storage
+namespace X.Infrastructure.ExternalServices.Storage
 {
     internal class FileStorageService : IFileStorageService
     {

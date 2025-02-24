@@ -3,9 +3,9 @@ using System.Net.Mail;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using X.Application.Core.Emails;
-using X.Infrastructure.Emails.Settings;
+using X.Infrastructure.ExternalServices.Emails.Settings;
 
-namespace X.Infrastructure.Emails
+namespace X.Infrastructure.ExternalServices.Emails
 {
     internal class EmailService : IEmailService
     {

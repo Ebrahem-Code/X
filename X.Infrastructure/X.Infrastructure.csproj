@@ -7,14 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AspNetCoreRateLimit" Version="5.0.0" />
     <PackageReference Include="AWSSDK.S3" Version="3.7.415.4" />
     <PackageReference Include="Azure.Storage.Blobs" Version="12.23.0" />
     <PackageReference Include="FirebaseAdmin" Version="3.1.0" />
     <PackageReference Include="Google.Cloud.Storage.V1" Version="4.10.0" />
+    <PackageReference Include="Hangfire" Version="1.8.18" />
+    <PackageReference Include="Hangfire.AspNetCore" Version="1.8.18" />
+    <PackageReference Include="Hangfire.SqlServer" Version="1.8.18" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.2" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.2" />
     <PackageReference Include="MimeKit" Version="4.10.0" />
-    <PackageReference Include="PayPal" Version="1.9.1" />
+    <PackageReference Include="NEST" Version="7.17.4" />
     <PackageReference Include="PayPalCheckoutSdk" Version="1.0.4" />
     <PackageReference Include="Square" Version="40.1.0" />
     <PackageReference Include="Stripe.net" Version="47.3.0" />

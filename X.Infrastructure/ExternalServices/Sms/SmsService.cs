@@ -4,10 +4,9 @@ using Microsoft.Extensions.Options;
 using Twilio;
 using Twilio.Rest.Api.V2010.Account;
 using X.Application.Core.Emails;
-using X.Infrastructure.Sms.Settings;
+using X.Infrastructure.ExternalServices.Sms.Settings;
 
-
-namespace X.Infrastructure.Sms;
+namespace X.Infrastructure.ExternalServices.Sms;
 
 internal sealed class TwilioSmsService : ISmsService
 {

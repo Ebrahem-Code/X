@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using X.Application.Core.Notifications;
 
-namespace X.Infrastructure.Notifications
+namespace X.Infrastructure.ExternalServices.Notifications
 {
     internal class NotificationService : INotificationService
     {

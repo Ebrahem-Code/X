@@ -3,6 +3,8 @@ namespace X.API;
 using X.Infrastructure;
 using X.Application;
 using Serilog;
+using Hangfire;
+using AspNetCoreRateLimit;
 
 public class Program
 {
@@ -18,7 +20,6 @@ public class Program
         // Register the Swagger generator
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
-
 
         builder.Host.UseSerilog((context, configuration) 
             => configuration.ReadFrom.Configuration(context.Configuration));
@@ -37,6 +38,12 @@ public class Program
         app.UseHttpsRedirection();
         app.UseAuthorization();
         app.MapControllers();
+
+        // Use Hangfire Dashboard
+        app.UseHangfireDashboard();
+
+        // Use Rate Limiting
+        app.UseIpRateLimiting();
 
         app.Run();
     }

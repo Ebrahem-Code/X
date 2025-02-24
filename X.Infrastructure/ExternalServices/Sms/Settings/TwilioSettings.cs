@@ -1,4 +1,4 @@
-﻿namespace X.Infrastructure.Sms.Settings;
+﻿namespace X.Infrastructure.ExternalServices.Sms.Settings;
 
 public class TwilioSettings
 {

@@ -9,9 +9,9 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using X.Application.Core.JWT;
-using X.Infrastructure.JWT.Settings;
+using X.Infrastructure.ExternalServices.JWT.Settings;
 
-namespace X.Infrastructure.JWT
+namespace X.Infrastructure.ExternalServices.JWT
 {
     internal sealed class JwtService : IJwtService
     {

@@ -1,6 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AspNetCoreRateLimit;
+using Hangfire;
+using Hangfire.SqlServer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Nest;
+using X.Application.Core.BackgroundJobs;
 using X.Application.Core.Data;
 using X.Application.Core.Emails;
 using X.Application.Core.JWT;
@@ -10,13 +15,14 @@ using X.Domain.Orders;
 using X.Domain.Products;
 using X.Domain.Users;
 using X.Infrastructure.Database;
-using X.Infrastructure.Emails;
-using X.Infrastructure.JWT;
-using X.Infrastructure.JWT.Settings;
+using X.Infrastructure.ExternalServices.BackgroundJobs;
+using X.Infrastructure.ExternalServices.Emails;
+using X.Infrastructure.ExternalServices.JWT;
+using X.Infrastructure.ExternalServices.JWT.Settings;
+using X.Infrastructure.ExternalServices.Sms;
+using X.Infrastructure.ExternalServices.Sms.Settings;
+using X.Infrastructure.ExternalServices.Storage;
 using X.Infrastructure.Repositories;
-using X.Infrastructure.Sms;
-using X.Infrastructure.Sms.Settings;
-using X.Infrastructure.Storage;
 
 namespace X.Infrastructure;
 
@@ -50,11 +56,45 @@ public static class DependencyInjection
         services.AddScoped<IEmailService, EmailService>();
         services.AddScoped<ISmsService, TwilioSmsService>();
         //services.AddScoped<IPaymentService, PaymentService>();
+        services.AddScoped<IBackgroundJobService, BackgroundJobService>();
 
         // Register Configuration.
         services.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));
         services.Configure<EmailService>(configuration.GetSection("EmailService"));
         services.Configure<TwilioSettings>(configuration.GetSection("TwilioSettings"));
+
+
+        // Configure Hangfire
+        services.AddHangfire(config => config
+            .SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
+            .UseSimpleAssemblyNameTypeSerializer()
+            .UseRecommendedSerializerSettings()
+            .UseSqlServerStorage(configuration.GetConnectionString("DefaultConnection"), new SqlServerStorageOptions
+            {
+                CommandBatchMaxTimeout = TimeSpan.FromMinutes(5),
+                SlidingInvisibilityTimeout = TimeSpan.FromMinutes(5),
+                QueuePollInterval = TimeSpan.Zero,
+                UseRecommendedIsolationLevel = true,
+                DisableGlobalLocks = true
+            }));
+
+        services.AddHangfireServer();
+
+
+        // Configure Rate Limiting
+        services.AddOptions();
+        services.AddMemoryCache();
+        services.Configure<IpRateLimitOptions>(configuration.GetSection("IpRateLimiting"));
+        services.Configure<IpRateLimitPolicies>(configuration.GetSection("IpRateLimitPolicies"));
+        services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+        services.AddInMemoryRateLimiting();
+
+
+        // Configure Elasticsearch
+        var settings = new ConnectionSettings(new Uri(configuration["Elasticsearch:Uri"]))
+            .DefaultIndex(configuration["Elasticsearch:Index"]);
+        var client = new ElasticClient(settings);
+        services.AddSingleton<IElasticClient>(client);
 
 
         return services;

@@ -1,4 +1,4 @@
-﻿namespace X.Infrastructure.JWT.Settings;
+﻿namespace X.Infrastructure.ExternalServices.JWT.Settings;
 
 public class JwtSettings
 {

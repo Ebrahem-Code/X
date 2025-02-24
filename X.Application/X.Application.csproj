@@ -9,10 +9,19 @@
   <ItemGroup>
     <Compile Remove="Notifications\**" />
     <Compile Remove="Orders\**" />
+    <Compile Remove="Products\Events\**" />
+    <Compile Remove="Products\Queries\GetProductById\**" />
+    <Compile Remove="Users\Events\**" />
     <EmbeddedResource Remove="Notifications\**" />
     <EmbeddedResource Remove="Orders\**" />
+    <EmbeddedResource Remove="Products\Events\**" />
+    <EmbeddedResource Remove="Products\Queries\GetProductById\**" />
+    <EmbeddedResource Remove="Users\Events\**" />
     <None Remove="Notifications\**" />
     <None Remove="Orders\**" />
+    <None Remove="Products\Events\**" />
+    <None Remove="Products\Queries\GetProductById\**" />
+    <None Remove="Users\Events\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,14 +33,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\X.Domain\X.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Products\Events\" />
-    <Folder Include="Products\Queries\GetProductById\" />
-    <Folder Include="Users\Events\UserDeletedEvent\" />
-    <Folder Include="Users\Events\UserUpdatedEvent\" />
-    <Folder Include="Users\Events\UserCreatedEvent\" />
   </ItemGroup>
 
 </Project>
