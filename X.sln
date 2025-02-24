@@ -13,10 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X.API", "X.API\X.API.csproj
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{26C20A58-110B-4DDF-947B-655955F82D5D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGetway", "ApiGetway", "{13054004-B800-425E-BA2A-12A922A37D65}"
-EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A82D20BD-D7CA-4CD0-A7DC-24AFC62CE9CB}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,10 +35,6 @@ Global
 		{4D1C64FB-0F67-48B2-ABE8-452F2D6B4125}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D1C64FB-0F67-48B2-ABE8-452F2D6B4125}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D1C64FB-0F67-48B2-ABE8-452F2D6B4125}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A82D20BD-D7CA-4CD0-A7DC-24AFC62CE9CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A82D20BD-D7CA-4CD0-A7DC-24AFC62CE9CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A82D20BD-D7CA-4CD0-A7DC-24AFC62CE9CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A82D20BD-D7CA-4CD0-A7DC-24AFC62CE9CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

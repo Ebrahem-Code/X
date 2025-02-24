@@ -1,6 +1,0 @@
-services:
-  x.api:
-    image: ${DOCKER_REGISTRY-}xapi
-    build:
-      context: .
-      dockerfile: X.API/Dockerfile
