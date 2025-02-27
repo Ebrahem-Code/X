@@ -5,7 +5,7 @@ namespace X.API.Controllers;
 
 [Route("api/[Controller]")]
 [ApiController]
-public sealed class OrdersController(ISender sender) : ControllerBase
+public sealed class OrdersController(ISender  sender) : ControllerBase
 {
     //[HttpPost("Create-Order")]
     //public async Task<IActionResult> CreateOrder([FromBody] CreateOrderRequest request) => Ok(await sender.Send());
