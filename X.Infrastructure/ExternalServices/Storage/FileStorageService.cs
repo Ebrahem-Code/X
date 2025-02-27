@@ -60,7 +60,7 @@ namespace X.Infrastructure.ExternalServices.Storage
         public async Task DeleteFileAsync(string fileName)
         {
             var storageProvider = _configuration["StorageProvider"];
-            switch (storageProvider.ToLower())
+            switch (storageProvider?.ToLower())
             {
                 case "azure":
                     await DeleteFromAzureBlobStorageAsync(fileName);
