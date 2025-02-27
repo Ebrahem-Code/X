@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace X.Application.Core.Masseges;
+namespace X.Application.Core.CQRS;
 
 public interface ICommandHandler<in TCommand> : IRequestHandler<TCommand> 
     where TCommand : ICommand

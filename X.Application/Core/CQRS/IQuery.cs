@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace X.Application.Core.Masseges;
+namespace X.Application.Core.CQRS;
 
 public interface IQuery : IRequest
 {

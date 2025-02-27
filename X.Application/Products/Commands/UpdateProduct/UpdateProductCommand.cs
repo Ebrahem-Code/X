@@ -1,4 +1,4 @@
-﻿using X.Application.Core.Masseges;
+﻿using X.Application.Core.CQRS;
 
 namespace X.Application.Products.Commands.UpdateProduct;
 

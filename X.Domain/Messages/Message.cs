@@ -19,7 +19,7 @@ public sealed class Message : AggregateRoot
     public Guid SenderId { get; }
     public Guid ReceiverId { get; }
     public string Content { get; private set; } = default!;
-    public DateTime SentAt { get; private set; }
+    public DateTime SentAt { get; }
     public bool IsRead { get; private set; }
 
     public static Message Create(Guid senderId, Guid receiverId, string content)

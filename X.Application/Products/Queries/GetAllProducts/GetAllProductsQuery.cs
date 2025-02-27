@@ -1,4 +1,4 @@
-﻿using X.Application.Core.Masseges;
+﻿using X.Application.Core.CQRS;
 using X.Domain.Products;
 
 namespace X.Application.Products.Queries.GetAllProducts;

@@ -1,4 +1,4 @@
-﻿using X.Application.Core.Masseges;
+﻿using X.Application.Core.CQRS;
 using X.Domain.Users;
 
 namespace X.Application.Users.Queries.GetUserByEmail;

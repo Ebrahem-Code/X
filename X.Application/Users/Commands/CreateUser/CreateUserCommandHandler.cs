@@ -1,5 +1,5 @@
 ﻿using X.Application.Core.Data;
-using X.Application.Core.Masseges;
+using X.Application.Core.CQRS;
 using X.Domain.Users;
 
 namespace X.Application.Users.Commands.CreateUser;

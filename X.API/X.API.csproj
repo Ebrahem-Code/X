@@ -31,4 +31,9 @@
     <ProjectReference Include="..\X.Infrastructure\X.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Contracts\Messages\" />
+    <Folder Include="Contracts\Notifications\" />
+  </ItemGroup>
+
 </Project>

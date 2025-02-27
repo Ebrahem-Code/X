@@ -1,5 +1,5 @@
 ﻿using X.Application.Core.Data;
-using X.Application.Core.Masseges;
+using X.Application.Core.CQRS;
 using X.Domain.Orders;
 
 namespace X.Application.Orders.Commands.CreateOrder;
