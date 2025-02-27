@@ -8,19 +8,13 @@
 
   <ItemGroup>
     <Compile Remove="Notifications\**" />
-    <Compile Remove="Orders\**" />
     <Compile Remove="Products\Events\**" />
-    <Compile Remove="Products\Queries\GetProductById\**" />
     <Compile Remove="Users\Events\**" />
     <EmbeddedResource Remove="Notifications\**" />
-    <EmbeddedResource Remove="Orders\**" />
     <EmbeddedResource Remove="Products\Events\**" />
-    <EmbeddedResource Remove="Products\Queries\GetProductById\**" />
     <EmbeddedResource Remove="Users\Events\**" />
     <None Remove="Notifications\**" />
-    <None Remove="Orders\**" />
     <None Remove="Products\Events\**" />
-    <None Remove="Products\Queries\GetProductById\**" />
     <None Remove="Users\Events\**" />
   </ItemGroup>
 
@@ -33,6 +27,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\X.Domain\X.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Orders\Commands\CreateOrder\" />
+    <Folder Include="Orders\Commands\DeleteOrder\" />
+    <Folder Include="Orders\Commands\UpdateOrder\" />
+    <Folder Include="Orders\Queries\GetAllOrders\" />
+    <Folder Include="Orders\Queries\GetOrderById\" />
+    <Folder Include="Products\Queries\GetProductById\" />
   </ItemGroup>
 
 </Project>

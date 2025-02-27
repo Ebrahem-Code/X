@@ -55,7 +55,6 @@ public static class DependencyInjection
         services.AddScoped<IJwtService, JwtService>();
         services.AddScoped<IEmailService, EmailService>();
         services.AddScoped<ISmsService, TwilioSmsService>();
-        //services.AddScoped<IPaymentService, PaymentService>();
         services.AddScoped<IBackgroundJobService, BackgroundJobService>();
 
         // Register Configuration.
