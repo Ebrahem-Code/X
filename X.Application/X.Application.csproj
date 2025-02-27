@@ -9,13 +9,10 @@
   <ItemGroup>
     <Compile Remove="Notifications\**" />
     <Compile Remove="Products\Events\**" />
-    <Compile Remove="Users\Events\**" />
     <EmbeddedResource Remove="Notifications\**" />
     <EmbeddedResource Remove="Products\Events\**" />
-    <EmbeddedResource Remove="Users\Events\**" />
     <None Remove="Notifications\**" />
     <None Remove="Products\Events\**" />
-    <None Remove="Users\Events\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,7 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Orders\Commands\CreateOrder\" />
     <Folder Include="Orders\Commands\DeleteOrder\" />
     <Folder Include="Orders\Commands\UpdateOrder\" />
     <Folder Include="Orders\Queries\GetAllOrders\" />

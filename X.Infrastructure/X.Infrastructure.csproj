@@ -29,4 +29,8 @@
     <ProjectReference Include="..\X.Application\X.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ExternalServices\OTP\" />
+  </ItemGroup>
+
 </Project>
