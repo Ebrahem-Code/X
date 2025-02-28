@@ -18,8 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Messages\Events\" />
-    <Folder Include="Messages\Queries\" />
     <Folder Include="Notifications\Events\" />
     <Folder Include="Notifications\Queries\" />
     <Folder Include="Orders\Commands\DeleteOrder\" />

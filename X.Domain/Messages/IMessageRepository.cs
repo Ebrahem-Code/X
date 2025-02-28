@@ -8,7 +8,6 @@ public interface IMessageRepository
     void Delete(Message message);
 
     // Queries.
-    Task<List<Message>> GetAllAsync(CancellationToken cancellationToken);
     Task<Message?> GetByIdAsync(Guid id, CancellationToken cancellationToken);
     Task<List<Message>> GetByUserIdAsync(Guid userId, CancellationToken cancellationToken);
 }

@@ -10,6 +10,7 @@ using X.Application.Core.Data;
 using X.Application.Core.Emails;
 using X.Application.Core.JWT;
 using X.Application.Core.Storage;
+using X.Domain.Messages;
 using X.Domain.Notifications;
 using X.Domain.Orders;
 using X.Domain.Products;
@@ -40,11 +41,12 @@ public static class DependencyInjection
         services.AddScoped<IUnitOfWork>(serviceProvider => serviceProvider.GetRequiredService<ApplicationDbContext>());
 
 
-        // Register Services.
+        // Register Repositories.
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IProductRepository, ProductRepository>();
         services.AddScoped<IOrderRepository, OrderRepository>();
         services.AddScoped<INotificationRepository, NotificationRepository>();
+        services.AddScoped<IMessageRepository, MessageRepository>();
 
 
         // Register FileStorageService
